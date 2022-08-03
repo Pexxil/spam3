@@ -1,6 +1,6 @@
 import asyncio
 import os
-from .. import worker, BOT_USERS, BOT_USER, LOGGER_GROUP
+from .. import worker as şakir, BOT_USERS, BOT_USER, LOGGER_GROUP
 from asyncio import wait
 from telethon import events
 LOGGER_GROUP = int(os.environ.get("LOGGER_GROUP", None))
@@ -9,7 +9,7 @@ abcd = "@beylerbeyiniz@KadimmTayfaa"
 x = "@beylerbeyiniz"
 king = [2127221861]
 
-@worker.on(events.NewMessage(incoming=True, pattern="/bigspam"))
+@şakir.on(events.NewMessage(incoming=True, pattern="/bigspam"))
 async def bigspam(e):
   users = BOT_USERS
   if not str(e.sender_id) in users:
@@ -31,7 +31,7 @@ async def bigspam(e):
                         + f"ʙɪɢsᴘᴀᴍ ᴡᴀs ᴇxᴇᴄᴜᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ɪɴ {(e.chat.title)} (`{e.chat_id}`) ᴡɪᴛʜ {counter} ᴛɪᴍᴇs ᴡɪᴛʜ {e.text}",
                     )
 
-@worker.on(events.NewMessage(incoming=True, pattern="/spam"))
+@şakir.on(events.NewMessage(incoming=True, pattern="/spam"))
 async def spammer(e):
   users = BOT_USERS
   if not str(e.sender_id) in users:
@@ -52,7 +52,7 @@ async def spammer(e):
                         + f"sᴘᴀᴍ ᴡᴀs ᴇxᴇᴄᴜᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ ɪɴ {(e.chat.title)} (`{e.chat_id}`) ᴡɪᴛʜ {counter} ᴛɪᴍᴇs ᴡɪᴛʜ {e.text}",
                     )
 
-@worker.on(events.NewMessage(incoming=True, pattern="/uspam"))
+@şakir.on(events.NewMessage(incoming=True, pattern="/uspam"))
 async def uspammer(e):
   if not str(e.sender_id) in BOT_USERS:
     return await e.reply("Kontrolümde değilsin✓")
@@ -65,7 +65,7 @@ async def uspammer(e):
         await e.client.send_message(e.chat, xD)
         await asyncio.sleep(1.95)
 
-@worker.on(events.NewMessage(incoming=True, pattern="/mspam"))
+@şakir.on(events.NewMessage(incoming=True, pattern="/mspam"))
 async def tiny_pic_spam(e):
   if not str(e.sender_id) in BOT_USERS:
     return await e.reply("Kontrolümde değilsin✓")
@@ -91,7 +91,7 @@ async def tiny_pic_spam(e):
                     )
 
 
-@worker.on(events.NewMessage(incoming=True, pattern="/restart"))
+@şakir.on(events.NewMessage(incoming=True, pattern="/restart"))
 async def restart(e):
   if not str(e.sender_id) in BOT_USERS:
     return await e.reply("ᴋɪᴅ ʏᴏᴜ ʜᴀᴠᴇ ɴᴏ ᴄᴏɴᴛʀᴏʟ ᴏɴ ᴍᴇ (sᴇᴅ)")
@@ -99,7 +99,7 @@ async def restart(e):
     try:
         text = "ʀᴇsᴛᴀʀᴛᴇᴅ\n\nWᴀɪᴛ ᴀ ғᴇᴡ sᴇᴄᴏɴᴅs 😬😲😬..."
         await e.reply(text, parse_mode=None, link_preview=None)
-        await worker.disconnect()
+        await şakir.disconnect()
     except Exception:
         pass
     os.execl(sys.executable, sys.executable, *sys.argv)
