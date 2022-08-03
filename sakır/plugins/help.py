@@ -58,7 +58,7 @@ async def ex(event):
                          [Button.inline("ʙᴀᴄᴋ", data="helpme")]
                      ])
 
-@worker.on(events.callbackquery.CallbackQuery(data="spam"))
+@sakir.on(events.callbackquery.CallbackQuery(data="spam"))
 async def ex(event):
     texi="➽ /spam number text \nMaximum /spam 99 text."
     await event.edit(texi,
