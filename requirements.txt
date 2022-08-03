@@ -10,3 +10,5 @@ pyGithub
 Pillow
 # EVERYTHING OK
 # DON'T CHANGE ANY LINES ELSE BOT WILL NOT WORK
+
+#Plugins everyone reply.to github/SAKIR.plugins
