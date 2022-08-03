@@ -1,10 +1,10 @@
 # By < Miraç Bey >
 # // SPAMMERBOT MADE BY (c) MiraçBey™ //
 
-from .. import worker
+from .. import worker as şakir
 from telethon import events, Button
 
-@worker.on(events.NewMessage(incoming=True, pattern="/start"))
+@şakir.on(events.NewMessage(incoming=True, pattern="/start"))
 async def start(event):
     await event.reply("ѕοмє ιиƒο αϐουτ οωиєя.",
                     buttons=[
@@ -12,7 +12,7 @@ async def start(event):
                         [Button.inline("Kontrol et✓",data="op")]
                     ])
 
-@worker.on(events.callbackquery.CallbackQuery(data="op"))
+@şakir.on(events.callbackquery.CallbackQuery(data="op"))
 async def ex(event):
     await event.edit("Bunu yaz /help",
                     buttons=[
