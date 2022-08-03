@@ -1,1 +1,1 @@
-worker: python -m ANKIT
+worker: python -m sakır
